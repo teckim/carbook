@@ -23,5 +23,8 @@ class ReservationsController < ApplicationController
   end
 
   private
-
+  
+  def reservation_params
+    params.require(:reservation).permit(:city, :date, :user_id, :car_id)
+  end 
 end
