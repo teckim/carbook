@@ -6,4 +6,6 @@ class User < ApplicationRecord
             length: { minimum: 6 },
             if: -> { new_record? || !password.nil? }
   validates :password_confirmation, presence: true
+
+  has_many :cars
 end
