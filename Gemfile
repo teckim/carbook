@@ -46,6 +46,5 @@ group :development do
   # gem "spring"
 end
 
-gem 'rack-cors'
 gem 'faker', '~> 2.23'
-
+gem 'rack-cors'

@@ -2,9 +2,9 @@ class ReservationsController < ApplicationController
   def index
     @reservations = current_user.reservations
     if @reservations.empty?
-        render json: { error: 'No Reservations!' }, status: 200
+      render json: { error: 'No Reservations!' }, status: 200
     else
-        render json: @reservations
+      render json: @reservations
     end
   end
 
@@ -13,7 +13,7 @@ class ReservationsController < ApplicationController
     if @myreservation.save
       render json: @myreservation
     else
-        render json: { success: false, errors: 'Oops something went wrong' }, status: :unprocessable_entity
+      render json: { success: false, errors: 'Oops something went wrong' }, status: :unprocessable_entity
     end
   end
 
@@ -23,8 +23,8 @@ class ReservationsController < ApplicationController
   end
 
   private
-  
+
   def reservation_params
     params.require(:reservation).permit(:city, :date, :user_id, :car_id)
-  end 
+  end
 end
