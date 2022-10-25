@@ -51,4 +51,3 @@ group :development do
 end
 
 gem 'faker', '~> 2.23'
-gem 'rack-cors'
