@@ -8,4 +8,5 @@ class User < ApplicationRecord
   validates :password_confirmation, presence: true
 
   has_many :cars
+  has_many :reservations
 end
