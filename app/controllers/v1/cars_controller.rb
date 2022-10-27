@@ -1,6 +1,6 @@
 class V1::CarsController < ApplicationController
   def index
-    @cars = Car.all
+    @cars = @current_user.cars.all
     render json: @cars
   end
 
@@ -10,7 +10,7 @@ class V1::CarsController < ApplicationController
   end
 
   def create
-    @car = Car.new(car_parms)
+    @car = @current_user.cars.new(car_parms)
     @car.user = User.first
     @car.save
     render json: @car
@@ -23,7 +23,7 @@ class V1::CarsController < ApplicationController
   end
 
   def destroy
-    @car = Car.all
+    @car = @current_user.cars.all
     @car = Car.find(params[:id])
     @car.destroy
     render json: "#{@car.brand} has been deleted!"
