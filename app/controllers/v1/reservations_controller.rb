@@ -1,6 +1,6 @@
 class ReservationsController < ApplicationController
   def index
-    @reservations = current_user.reservations
+    @reservations = @current_user.reservations
     if @reservations.empty?
       render json: { error: 'No Reservations!' }, status: 200
     else
