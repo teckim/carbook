@@ -1,4 +1,4 @@
-class V1::me::ReservationsController < ApplicationController
+class V1::Me::ReservationsController < ApplicationController
     def index
       @reservations = @current_user.reservations
       if @reservations.empty?
