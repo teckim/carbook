@@ -27,6 +27,18 @@ RSpec.describe Car, type: :model do
       expect(@car).to_not be_valid
     end
 
+    
+
+    it 'should be invalid without no image given' do
+      @car.image = nil
+      expect(@car).to_not be_valid
+    end
+
+    it 'should be invalid without no price mentioned' do
+      @car.price = nil
+      expect(@car).to_not be_valid
+    end
+
     it 'should be invalid with a negative price' do
       @car.price = -10
       expect(@car).to_not be_valid
