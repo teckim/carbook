@@ -3,7 +3,7 @@ require 'swagger_helper'
 RSpec.describe 'v1/authentication', type: :request do
   path '/v1/auth/login' do
     post('Login') do
-      consumes "application/json"
+      consumes 'application/json'
       parameter name: :login, in: :body, schema: {
         type: :object,
         properties: {
@@ -14,8 +14,10 @@ RSpec.describe 'v1/authentication', type: :request do
       }
 
       response(200, 'successful') do
-        User.create!(name: 'John Doe', password: 'password', password_confirmation: 'password',
-          username: 'api_doc_user') unless User.find_by_username('api_doc_user')
+        unless User.find_by_username('api_doc_user')
+          User.create!(name: 'John Doe', password: 'password', password_confirmation: 'password',
+                       username: 'api_doc_user')
+        end
 
         let(:login) { { username: 'api_doc_user', password: 'password' } }
 
