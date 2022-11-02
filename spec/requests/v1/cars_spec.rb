@@ -27,9 +27,9 @@ RSpec.describe 'v1/cars', type: :request do
             brand: { type: :string },
             model: { type: :string },
             image: { type: :string },
-            description: { type: :text },
-            price: { type: :decimal },
-            user_id: { type: :bigint },
+            description: { type: :string },
+            price: { type: :integer },
+            user_id: { type: :integer },
           },
           required: %w[brand model image description price user_id]
         }
