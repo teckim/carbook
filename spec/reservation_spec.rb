@@ -4,7 +4,8 @@ RSpec.describe Reservation, type: :model do
   before(:all) do
     @user = User.create(username: "john doe1#{SecureRandom.hex}", password: '123456', password_confirmation: '123456')
     expect(@user).to be_valid
-    @car = Car.create!(brand: 'BMW', description: 'car details1', image: 'some url1', model: '2019', price: 4000, user_id: @user.id)
+    @car = Car.create!(brand: 'BMW', description: 'car details1', image: 'some url1', model: '2019', price: 4000,
+                       user_id: @user.id)
     @reservation = Reservation.new(city: 'Imphal', date: '23/8/2022', user_id: @user.id, car_id: @car.id)
   end
 
