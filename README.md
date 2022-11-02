@@ -10,7 +10,7 @@ Main features of this website are:
  ## Project Documentation 📄
 
 - API deployment [link](http://localhost:3000/v1)👈
-- API GitHub repository [link](https://github.com/teckim/carbook-api)👈
+- Front-End GitHub repository [link](https://github.com/teckim/carbook-ui)👈
 
 ## Kanban Board:
 
@@ -38,17 +38,21 @@ To get a local copy up and running follow these simple steps.
 ### Prerequisites
 
 - A web browser like Google Chrome.
-- A code editor like Visual Studio Code with Git and nodejs.
+- A code editor like Visual Studio Code with Git and Ruby.
 
 > You can check if Git is installed by running the following command in the terminal.
 ```
 $ git --version
 ```
-> Likewise for Node installation.
+> Likewise for Ruby installation.
 ```
-$ node --version
+$ ruby --version && irb
 ```
+To install rails, in the terminal kindly run this command:
 
+```
+$ gem install rails
+```
 ### Setup
 
 Clone the repository using the GitHub link provided below.
@@ -57,7 +61,7 @@ Clone the repository using the GitHub link provided below.
 
 In the terminal, go to your file directory and run this command.
 ```
-$ git clone https://github.com/teckim/carbook-ui.git
+$ git clone https://github.com/teckim/carbook-api.git
 ```
 ### Usage
 
@@ -66,27 +70,32 @@ $ git clone https://github.com/teckim/carbook-ui.git
 Make your way to the correct directory by running this command:
 
 ```
-$ cd carbook-ui
+$ cd carbook-api
 ```
 
 Install the required dependencies to run the project with this command:
 ```
-$ npm install
+$ bundle install
+```
+
+Setup the database, run:
+```
+$ rails db:create
+$ rails db:migrate
+$ rails db:seed
 ```
 
 Then run it in your browser with this command:
 
 ```
-$ npm start
+$ rails server
 ```
-
-Kindly modify the files as needed.
 
 ### Run tests
 
-To run tests, please run this command
+To run tests, please run this command:
 ```
-$ npm run test
+$ rspec
 ```
 ## Authors
 
