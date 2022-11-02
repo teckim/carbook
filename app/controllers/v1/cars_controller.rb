@@ -1,4 +1,6 @@
 class V1::CarsController < ApplicationController
+  skip_before_action :authorize_request
+
   def index
     @cars = Car.all
     render json: @cars
@@ -10,9 +12,7 @@ class V1::CarsController < ApplicationController
   end
 
   def create
-    @car = Car.new(car_parms)
-    @car.user = User.first
-    @car.save
+    @car = Car.create!(car_parms)
     render json: @car
   end
 
@@ -23,7 +23,6 @@ class V1::CarsController < ApplicationController
   end
 
   def destroy
-    @car = Car.all
     @car = Car.find(params[:id])
     @car.destroy
     render json: "#{@car.brand} has been deleted!"
