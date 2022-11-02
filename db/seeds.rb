@@ -4,20 +4,10 @@ User.destroy_all
 
 user_one = User.create!(name: "Hannington", password: '123456789', password_confirmation: '123456789', username: 'hannn')
 
-car_one = Car.create!(brand: 'BMW', model: 'rid399', image: 'https://cdn.pixabay.com/photo/2012/05/29/00/43/car-49278_960_720.jpg', price: 25000, description: 'BMW car', user: user_one)
-car_two = Car.create!(brand: 'BMW', model: 'han427', image: 'https://cdn.pixabay.com/photo/2012/05/29/00/43/car-49278_960_720.jpg', price: 25000, description: 'BMW car', user: user_one)
-car_three = Car.create!(brand: 'BMW', model: 'kim346', image: 'https://cdn.pixabay.com/photo/2012/05/29/00/43/car-49278_960_720.jpg', price: 25000, description: 'BMW car', user: user_one)
-
-Reservation.create(
-  city: "Imphal",
-  date: "23/8/2022",
-  user_id: user_one.id,
-  car_id: car_one.id
-)
-
-Reservation.create(
-  city: "Algiers",
-  date: "24/9/2023",
-  user_id: user_one.id,
-  car_id: car_two.id
-)
+car_one = Car.create!(brand: 'Bugatti', model: 'rid399', image: 'https://cdn.pixabay.com/photo/2012/05/29/00/43/car-49278_960_720.jpg', price: 25000, description: 'Bugatti chiron', user: user_one)
+car_two = Car.create!(brand: 'BMW', model: 'han427', image: 'https://media.istockphoto.com/photos/illustration-of-generic-hatchback-car-perspective-view-picture-id1150425295?k=20&m=1150425295&s=612x612&w=0&h=zf-OQVf5Zv3M1bORn2gzYm49D61k1kkSzd3s7YqF9VU=', price: 25000, description: 'BMW', user: user_one)
+car_three = Car.create!(brand: 'Landcruiser', model: 'kim346', image: 'https://imgd-ct.aeplcdn.com/370x208/n/cw/ec/40432/scorpio-n-exterior-right-front-three-quarter-15.jpeg?isig=0&q=75', price: 25000, description: 'Sports utiliy vechile', user: user_one)
+car_four = Car.create!(brand: 'KIA', model: 'KiA', image: 'https://www.kia.com/content/dam/kia2/in/en/images/home/seltos_new_masthead.png', price: 5000, description: 'Sedan', user: user_one)
+car_five = Car.create!(brand: 'Mercedes', model: 'CLA250', image: 'https://cdni.autocarindia.com/utils/imageresizer.ashx?n=https://cms.haymarketindia.net/model/uploads/modelimages/Mercedes-Benz-A-class-Hatchback-210920221745.jpg&w=350&h=251&q=90&c=1', price: 25000, description: 'Hatchback', user: user_one)
+car_six = Car.create!(brand: 'Lambo', model: 'kim346', image: 'https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/homepage/families-gallery/2022/04_12/family_chooser_tecnica_m.png', price: 25000, description: 'Sports vechile', user: user_one)
+car_seven = Car.create!(brand: 'BMW', model: 'M3', image: 'https://cdni.autocarindia.com/utils/imageresizer.ashx?n=https://cms.haymarketindia.net/model/uploads/modelimages/2%20Series%20CoupeModelImage.jpg&w=350&h=251&q=90&c=1', price: 25000, description: 'Sports vechile', user: user_one)
