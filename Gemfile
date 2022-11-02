@@ -40,6 +40,8 @@ gem 'jwt', '~> 2.5'
 gem 'rack-cors'
 
 group :development, :test do
+  gem 'rspec-rails'
+
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'dotenv-rails'
@@ -51,3 +53,5 @@ group :development do
 end
 
 gem 'faker', '~> 2.23'
+
+gem 'rswag'
