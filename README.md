@@ -73,6 +73,7 @@ Make your way to the correct directory by running this command:
 $ cd carbook-api
 ```
 
+
 Install the required dependencies to run the project with this command:
 ```
 $ bundle install
