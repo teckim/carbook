@@ -5,4 +5,5 @@ class Car < ApplicationRecord
   validates :image, presence: true
   validates :description, presence: true, length: { maximum: 50 }
   validates :price, presence: true, numericality: { greater_than: 0 }
+  has_many :reservations
 end
