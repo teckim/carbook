@@ -214,6 +214,7 @@ DEPENDENCIES
   rails (~> 7.0.4)
   rspec-rails
   rswag
+  rswag-specs
   tzinfo-data
 
 RUBY VERSION

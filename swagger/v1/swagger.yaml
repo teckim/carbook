@@ -12,6 +12,9 @@ paths:
           description: successful
     post:
       summary: create car
+  "/v1/auth/login":
+    post:
+      summary: Login
       parameters: []
       responses:
         '200':
@@ -69,8 +72,15 @@ paths:
       responses:
         '200':
           description: successful
+                username:
+                  type: string
+                password:
+                  type: string
+              required:
+              - username
+              - password
 servers:
 - url: https://{defaultHost}
   variables:
     defaultHost:
-      default: 127.0.0.1:3000/
+      default: localhost:3000
