@@ -1,4 +1,6 @@
 class V1::CarsController < ApplicationController
+  skip_before_action :authorize_request
+
   def index
     @cars = Car.all
     render json: @cars
