@@ -4,7 +4,7 @@ class V1::Me::ReservationsController < ApplicationController
     if @reservations.empty?
       render json: { error: 'No Reservations!' }, status: 200
     else
-      render json: @reservations
+      render json: @reservations.to_json(include: :car)
     end
   end
 
