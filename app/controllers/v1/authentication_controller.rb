@@ -15,8 +15,16 @@ class V1::AuthenticationController < ApplicationController
                },
                status: :ok
       rescue StandardError => e
-        render json: { error: e },
-               status: :internal_server_error
+        if e.instance_of?(NilClass)
+          render status: :internal_server_error
+        else
+          render json: {
+                   success: false,
+                   message: e.class.to_s,
+                   errors: [{ detail: e.message }]
+                 },
+                 status: :internal_server_error
+        end
       end
     else
       render json: { error: 'Unauthorized, wrong username or password' }, status: :unauthorized
