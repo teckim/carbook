@@ -5,14 +5,19 @@ class V1::AuthenticationController < ApplicationController
   def login
     @user = User.find_by_username(params[:username])
     if @user&.authenticate(params[:password])
-      token = JsonWebToken.encode(user_id: @user.id)
-      time = Time.now + 24.hours.to_i
-      render json: {
-               token:,
-               exp: time.strftime('%m-%d-%Y %H:%M'),
-               user: { id: @user.id, username: @user.username, name: @user.name }
-             },
-             status: :ok
+      begin
+        token = JsonWebToken.encode(user_id: @user.id)
+        time = Time.now + 24.hours.to_i
+        render json: {
+                 token:,
+                 exp: time.strftime('%m-%d-%Y %H:%M'),
+                 user: { id: @user.id, username: @user.username, name: @user.name }
+               },
+               status: :ok
+      rescue StandardError => e
+        render json: { error: e },
+               status: :ok
+      end
     else
       render json: { error: 'Unauthorized, wrong username or password' }, status: :unauthorized
     end
