@@ -1,12 +1,9 @@
 require 'swagger_helper'
 
 RSpec.describe 'v1/cars', type: :request do
-
   path '/v1/cars' do
-
     get('list cars') do
       response(200, 'successful') do
-
         after do |example|
           example.metadata[:response][:content] = {
             'application/json' => {
@@ -29,7 +26,7 @@ RSpec.describe 'v1/cars', type: :request do
             image: { type: :string },
             description: { type: :string },
             price: { type: :integer },
-            user_id: { type: :integer },
+            user_id: { type: :integer }
           },
           required: %w[brand model image description price user_id]
         }
