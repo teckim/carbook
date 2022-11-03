@@ -5,7 +5,6 @@ RSpec.describe Reservation, type: :model do
     @user = User.new(username: "john doe1#{SecureRandom.hex}", password: '123456', password_confirmation: '123456')
 
     @car = Car.new(brand: 'BMW', description: 'car details1', image: 'some url1', model: '2019', price: 4000)
-    @car.user = @user
     @reservation = Reservation.new(city: 'Imphal', date: '23/8/2022')
     @reservation.user = @user
     @reservation.car = @car
