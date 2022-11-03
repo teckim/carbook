@@ -24,6 +24,71 @@ paths:
               required:
               - username
               - password
+  "/v1/cars":
+    get:
+      summary: list cars
+      responses:
+        '200':
+          description: successful
+    post:
+      summary: create car
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                brand:
+                  type: string
+                model:
+                  type: string
+                image:
+                  type: string
+                description:
+                  type: string
+                price:
+                  type: integer
+                user_id:
+                  type: integer
+              required:
+              - brand
+              - model
+              - image
+              - description
+              - price
+              - user_id
+  "/v1/cars/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show car
+      responses:
+        '200':
+          description: successful
+    patch:
+      summary: update car
+      responses:
+        '200':
+          description: successful
+    put:
+      summary: update car
+      responses:
+        '200':
+          description: successful
+    delete:
+      summary: delete car
+      responses:
+        '200':
+          description: successful
 servers:
 - url: http://{defaultHost}
   variables:
