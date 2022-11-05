@@ -4,6 +4,8 @@ RSpec.describe 'v1/cars', type: :request do
   path '/v1/cars' do
     get('list cars') do
       response(200, 'successful') do
+        security [Bearer: {}]
+        let(:Bearer) { "Bearer #{generate_token}" }
         after do |example|
           example.metadata[:response][:content] = {
             'application/json' => {
@@ -17,6 +19,8 @@ RSpec.describe 'v1/cars', type: :request do
 
     post('create car') do
       response(200, 'successful') do
+        security [Bearer: {}]
+        let(:Bearer) { "Bearer #{generate_token}" }
         consumes 'application/json'
         parameter name: :car, in: :body, schema: {
           type: :object,
@@ -49,6 +53,8 @@ RSpec.describe 'v1/cars', type: :request do
 
     get('show car') do
       response(200, 'successful') do
+        security [Bearer: {}]
+        let(:Bearer) { "Bearer #{generate_token}" }
         let(:id) { '123' }
 
         after do |example|
@@ -64,6 +70,8 @@ RSpec.describe 'v1/cars', type: :request do
 
     patch('update car') do
       response(200, 'successful') do
+        security [Bearer: {}]
+        let(:Bearer) { "Bearer #{generate_token}" }
         let(:id) { '123' }
 
         after do |example|
@@ -79,6 +87,8 @@ RSpec.describe 'v1/cars', type: :request do
 
     put('update car') do
       response(200, 'successful') do
+        security [Bearer: {}]
+        let(:Bearer) { "Bearer #{generate_token}" }
         let(:id) { '123' }
 
         after do |example|
@@ -94,6 +104,8 @@ RSpec.describe 'v1/cars', type: :request do
 
     delete('delete car') do
       response(200, 'successful') do
+        security [Bearer: {}]
+        let(:Bearer) { "Bearer #{generate_token}" }
         let(:id) { '123' }
 
         after do |example|

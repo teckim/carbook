@@ -27,11 +27,15 @@ paths:
   "/v1/cars":
     get:
       summary: list cars
+      security:
+      - Bearer: {}
       responses:
         '200':
           description: successful
     post:
       summary: create car
+      security:
+      - Bearer: {}
       parameters: []
       responses:
         '200':
@@ -71,21 +75,29 @@ paths:
         type: string
     get:
       summary: show car
+      security:
+      - Bearer: {}
       responses:
         '200':
           description: successful
     patch:
       summary: update car
+      security:
+      - Bearer: {}
       responses:
         '200':
           description: successful
     put:
       summary: update car
+      security:
+      - Bearer: {}
       responses:
         '200':
           description: successful
     delete:
       summary: delete car
+      security:
+      - Bearer: {}
       responses:
         '200':
           description: successful
